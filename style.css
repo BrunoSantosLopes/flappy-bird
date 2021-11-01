@@ -1,0 +1,155 @@
+body {
+    display: flex;
+    background-color: black;
+}
+
+.game {
+    position: relative;
+    width: 500px;
+    height: 730px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid white
+}
+
+.game-container {
+    width: 500px;
+    height: 730px;
+    position: absolute;
+    overflow: hidden;
+}
+
+.down {
+    transform: rotate(20deg);
+   
+}
+
+.up {
+    transform: rotate(-30deg);
+}
+
+
+.sky {
+    background-image: url('images/fb-game-background.png');
+    width: 500px;
+    height: 580px;
+    position: absolute;
+}
+
+
+.bird {
+    background-image: url('images/flappy-bird.png');
+    position: absolute;
+    width: 60px;
+    height: 45px;
+    left: 220px;
+    bottom: 100px;
+    transition: top 0.2s, transform 0.4s;
+}
+
+.obstacle {
+    background-image: url('images/flappybird-pipe.png');
+    width: 60px;
+    height: 500px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.topObstacle {
+    background-image: url('images/flappybird-pipe.png');
+    transform: rotate(180deg);
+    width: 60px;
+    height: 500px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  
+  @-webkit-keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+
+  .ground-container {
+      top: 580px;
+      height: 150px;
+      width: 500px;
+      position:  absolute;
+      overflow: hidden;
+  }
+  
+  .ground-moving {
+    position: absolute;
+    height: 150px;
+    width: 580px;
+    background-image: url('images/bottom-background.png');
+    background-repeat: repeat-x;
+    animation: slideright 100s infinite linear;
+    -webkit-animation: slideright 100s infinite linear;
+    z-index: 0;
+  }
+
+.ground {
+    animation: none;
+}
+
+.start {
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    background-color: grey;
+    top: 250px;
+    left: 215px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.start p {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.score {
+    position: absolute;
+    width: 70px;
+    height: 40px;
+    top: 100px;
+    left: 215px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    z-index: 2;
+}
+
+.score p {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: xx-large;
+}
+
+
+.hide {
+    display: none;
+}
